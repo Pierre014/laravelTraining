@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route:group(['middelware'=>'auth'],function(){
-    route::get('/dashboard','dashboardController@index');
-})
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,7 +27,5 @@ Route::get('/restaurants/show/{review}','RestaurantsController@show');
 Route::post('/restaurants/create','RestaurantsController@store');
 Route::get('/restaurants/edit/{id}','RestaurantsController@edit');
 Route::patch('/restaurants/edit/{id}','RestaurantsController@update');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
